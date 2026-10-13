@@ -1,211 +1,398 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-UY">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0b0b0b">
+    <meta name="color-scheme" content="dark">
     
-    <!-- SEO Meta Tags -->
-    <title>Website Under Maintenance | We'll Be Back Soon</title>
-    <meta name="description" content="Our website is currently under maintenance. We're making improvements and will be back soon. Subscribe to get notified when we're live!">
-    <meta name="keywords" content="website maintenance, under construction, coming soon">
-    <meta name="author" content="Webspace">
-    <meta name="robots" content="index, follow">
+    <title>Stamping Zone | Volvemos pronto</title>
+    <meta name="description" content="Estamos mejorando Stamping Zone. Muy pronto volvemos con nuevos drops, prendas y estampados personalizados en Paysandú, Uruguay.">
+    <meta name="keywords" content="Stamping Zone, ropa urbana, streetwear, DTF, vinilo textil, sublimación, Paysandú, Uruguay">
+    <meta name="author" content="Stamping Zone">
+    <meta name="robots" content="noindex, nofollow">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Website Under Maintenance | We'll Be Back Soon">
-    <meta property="og:description" content="Our website is currently under maintenance. We're making improvements and will be back soon.">
+    <meta property="og:title" content="Stamping Zone | Volvemos pronto">
+    <meta property="og:description" content="Estamos preparando algo grande. Volvemos pronto con nuevos drops y estampados personalizados.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:image" content="./assets/og-image.jpg">
+    <meta property="og:url" content="https://stampingzone.store">
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Website Under Maintenance | We'll Be Back Soon">
-    <meta name="twitter:description" content="Our website is currently under maintenance. We're making improvements and will be back soon.">
-    <meta name="twitter:image" content="./assets/og-image.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Stamping Zone | Volvemos pronto">
+    <meta name="twitter:description" content="Estamos preparando algo grande. Volvemos pronto.">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-    <link rel="alternate icon" href="./assets/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="./css/style.css">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Structured Data (JSON-LD) for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Website Under Maintenance",
-        "description": "Our website is currently under maintenance. We're making improvements and will be back soon.",
-        "url": "https://yourwebsite.com",
-        "potentialAction": {
-            "@type": "NotifyAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://yourwebsite.com"
-            },
-            "result": {
-                "@type": "NotifyAction",
-                "name": "Get notified when website is live"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --sz-bg: #0b0b0b;
+            --sz-surface: #141414;
+            --sz-gold: #f0ad32;
+            --sz-gold-light: #ffc451;
+            --sz-text: #f5f5f5;
+            --sz-muted: #aaa;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { min-height: 100%; background: var(--sz-bg); }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(ellipse at 50% 35%, rgba(240,173,50,.09), transparent 52%),
+                var(--sz-bg);
+            color: var(--sz-text);
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 48px;
+        }
+
+        /* Ocultamos el selector de tema: el diseño es siempre oscuro. */
+        .theme-toggle { display: none !important; }
+
+        .main {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 32px 0 48px;
+        }
+
+        .hero {
+            width: 100%;
+            max-width: 780px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .brand {
+            margin: 0 0 24px;
+            color: var(--sz-text);
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -.07em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .brand span { color: var(--sz-gold); }
+
+        .brand-line {
+            width: 64px;
+            height: 4px;
+            margin: 0 auto 28px;
+            background: var(--sz-gold);
+            border-radius: 10px;
+        }
+
+        .illustration-wrapper {
+            width: min(240px, 65vw);
+            margin: 0 auto 18px;
+            color: var(--sz-gold);
+        }
+
+        .maintenance-illustration {
+            display: block;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 24px rgba(240,173,50,.12));
+        }
+
+        .headline {
+            margin: 0 auto 18px;
+            max-width: 760px;
+            color: var(--sz-text);
+            font-size: clamp(2rem, 6vw, 4.2rem);
+            font-weight: 900;
+            letter-spacing: -.055em;
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
+
+        .headline span { color: var(--sz-gold); }
+
+        .subtext {
+            max-width: 560px;
+            margin: 0 auto;
+            color: var(--sz-muted);
+            font-size: clamp(1rem, 2.5vw, 1.12rem);
+            line-height: 1.8;
+        }
+
+        .status-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin: 26px auto 0;
+            padding: 10px 15px;
+            border: 1px solid rgba(240,173,50,.28);
+            border-radius: 999px;
+            background: rgba(240,173,50,.06);
+            color: var(--sz-gold-light);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--sz-gold);
+            box-shadow: 0 0 12px rgba(240,173,50,.8);
+        }
+
+        .contact-text {
+            margin: 30px 0 18px;
+            color: #ddd;
+            font-size: .95rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0 auto;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 13px 20px;
+            border: 1px solid var(--sz-gold);
+            border-radius: 6px;
+            background: var(--sz-gold);
+            color: #111;
+            font-size: .9rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform .2s ease, background .2s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            background: var(--sz-gold-light);
+        }
+
+        .contact-btn.secondary {
+            background: transparent;
+            color: var(--sz-gold);
+        }
+
+        .contact-btn.secondary:hover {
+            background: rgba(240,173,50,.1);
+        }
+
+        .contact-btn svg {
+            width: 19px;
+            height: 19px;
+            flex-shrink: 0;
+        }
+
+        .social-container { display: none !important; }
+
+        .footer {
+            padding: 22px 0 8px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            text-align: center;
+        }
+
+        .footer-text {
+            margin: 0;
+            color: #777;
+            font-size: .8rem;
+            line-height: 1.7;
+        }
+
+        .footer-text strong {
+            color: #ccc;
+            font-weight: 700;
+        }
+
+        .footer-link {
+            color: var(--sz-gold);
+            text-decoration: none;
+        }
+
+        .footer-link:hover { text-decoration: underline; }
+
+        .fade-in-up {
+            animation: sz-enter .7s ease both;
+        }
+
+        @keyframes sz-enter {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 18px; }
+            .main { padding: 20px 0 34px; }
+            .headline { font-size: clamp(2rem, 10vw, 3rem); }
+            .contact-buttons { flex-direction: column; }
+            .contact-btn { width: 100%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important;
             }
         }
-    }
-    </script>
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./css/style.css">
+    </style>
 </head>
+
 <body>
-    <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Preloader -->
-    <div id="preloader" class="preloader">
-        <div class="preloader-spinner">
-            <div class="spinner"></div>
-        </div>
+    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+    <div id="preloader" class="preloader" aria-hidden="true">
+        <div class="preloader-spinner"><div class="spinner"></div></div>
     </div>
 
-    <!-- Main Container -->
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path class="sun-icon" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"></path>
-                    <path class="sun-icon" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-                    <path class="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-        </header>
+        <header class="header" aria-label="Stamping Zone"></header>
 
-        <!-- Main Content -->
         <main id="main-content" class="main">
-            <!-- Hero Section -->
-            <section class="hero">
-                <!-- Animated SVG Illustration -->
-                <div class="illustration-wrapper">
-                    <svg class="maintenance-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-label="Maintenance illustration">
-                        <!-- Subtle background circle -->
-                        <circle class="illustration-bg" cx="200" cy="150" r="90" fill="none" stroke="currentColor" stroke-width="2" opacity="0.2"/>
-                        
-                        <!-- Server/Computer Tower -->
-                        <g class="server-tower" transform="translate(200, 150)">
-                            <!-- Server chassis -->
-                            <rect x="-40" y="-50" width="80" height="100" rx="4" fill="none" stroke="currentColor" stroke-width="4"/>
-                            
-                            <!-- Server rack slots (3 horizontal lines) -->
-                            <line x1="-35" y1="-30" x2="35" y2="-30" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                            <line x1="-35" y1="0" x2="35" y2="0" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                            <line x1="-35" y1="30" x2="35" y2="30" stroke="currentColor" stroke-width="2" opacity="0.6"/>
-                            
-                            <!-- LED indicators -->
-                            <circle cx="-30" cy="-30" r="2" fill="currentColor" opacity="0.8"/>
-                            <circle cx="-30" cy="0" r="2" fill="currentColor" opacity="0.8"/>
-                            <circle cx="-30" cy="30" r="2" fill="currentColor" opacity="0.8"/>
-                            
-                            <!-- Power button -->
-                            <circle cx="30" cy="40" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="30" cy="40" r="2" fill="currentColor" opacity="0.7"/>
+            <section class="hero" aria-labelledby="main-title">
+                <div class="brand fade-in-up" aria-label="Stamping Zone">
+                    STAMPING <span>ZONE</span>
+                </div>
+
+                <div class="brand-line"></div>
+
+                <div class="illustration-wrapper fade-in-up">
+                    <svg class="maintenance-illustration"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 240 180"
+                         role="img"
+                         aria-label="Ilustración de herramientas y mantenimiento">
+                        <circle cx="120" cy="90" r="73" fill="none"
+                                stroke="currentColor" stroke-width="1.5" opacity=".18"/>
+                        <circle cx="120" cy="90" r="55" fill="none"
+                                stroke="currentColor" stroke-width="1" opacity=".25"
+                                stroke-dasharray="4 8"/>
+                        <g transform="translate(120 90)" fill="none"
+                           stroke="currentColor" stroke-linecap="round"
+                           stroke-linejoin="round">
+                            <path d="M-34 -35 A23 23 0 0 0 -6 -7 L32 31 A9 9 0 0 1 19 44 L-19 6 A23 23 0 0 0 -47 -22 L-31 -6 L-39 2 L-55 -14 A23 23 0 0 0 -27 14"
+                                  stroke-width="5"/>
+                            <path d="M22 -45 L35 -32 L15 -12 L2 -25 Z"
+                                  stroke-width="4"/>
+                            <path d="M-5 -27 L-25 -47 L-42 -43 L-28 -29 L-30 -13"
+                                  stroke-width="4"/>
+                            <circle cx="0" cy="0" r="10" stroke-width="3"/>
+                            <path d="M-68 50 H68" stroke-width="2" opacity=".5"/>
                         </g>
+                        <circle cx="190" cy="36" r="4" fill="currentColor"/>
+                        <circle cx="47" cy="42" r="3" fill="currentColor" opacity=".6"/>
+                        <path d="M38 116 l6 6 -6 6 -6 -6z" fill="currentColor" opacity=".7"/>
+                        <path d="M192 124 l5 5 -5 5 -5 -5z" fill="currentColor" opacity=".7"/>
                     </svg>
                 </div>
 
-                <!-- Headline -->
-                <h1 class="headline fade-in-up">We're Under Maintenance</h1>
-                
-                <!-- Sub-text -->
-                <p class="subtext fade-in-up">Our website is getting a quick tune-up. We'll be back soon!</p>
+                <h1 id="main-title" class="headline fade-in-up">
+                    ESTAMOS PREPARANDO <span>ALGO GRANDE.</span>
+                </h1>
 
-                <!-- Countdown Timer -->
-                <div class="countdown-container fade-in-up">
-                    <div class="countdown-timer">
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="days">00</span>
-                            <span class="countdown-label">Days</span>
-                        </div>
-                        <div class="countdown-separator">:</div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="hours">00</span>
-                            <span class="countdown-label">Hours</span>
-                        </div>
-                        <div class="countdown-separator">:</div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="minutes">00</span>
-                            <span class="countdown-label">Minutes</span>
-                        </div>
-                        <div class="countdown-separator">:</div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="seconds">00</span>
-                            <span class="countdown-label">Seconds</span>
-                        </div>
-                    </div>
+                <p class="subtext fade-in-up">
+                    Estamos mejorando nuestra web para ofrecerte una mejor experiencia.
+                    Muy pronto volvemos con nuevos drops, prendas y estampados personalizados.
+                </p>
+
+                <div class="status-label fade-in-up">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Estamos trabajando para volver pronto
                 </div>
 
-                <!-- Notify Me Form -->
-                <div class="form-container fade-in-up">
-                    <form id="notify-form" class="notify-form" novalidate>
-                        <div class="form-group">
-                            <input 
-                                type="email" 
-                                id="email-input" 
-                                name="email" 
-                                class="email-input" 
-                                placeholder="Enter your email address" 
-                                required
-                                aria-label="Email address"
-                                aria-describedby="email-error"
-                            >
-                            <button type="submit" class="submit-btn" aria-label="Submit email for notification">
-                                Notify Me
-                            </button>
-                        </div>
-                        <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
-                        <div id="form-success" class="success-message" role="alert" aria-live="polite"></div>
-                    </form>
-                </div>
+                <p class="contact-text fade-in-up">
+                    Mientras tanto, conectá con Stamping Zone.
+                </p>
 
-                <!-- Social Media Icons -->
-                <div class="social-container fade-in-up">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit our Facebook page">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                <div class="contact-buttons fade-in-up">
+                    <a class="contact-btn"
+                       href="https://www.instagram.com/stamping_zone_/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
                         </svg>
+                        Seguinos en Instagram
                     </a>
-                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit our X (Twitter) page">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+
+                    <a class="contact-btn secondary"
+                       href="https://wa.me/59892719254?text=Hola%20Stamping%20Zone%2C%20quer%C3%ADa%20hacer%20una%20consulta."
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                             fill="currentColor">
+                            <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.6 0 .28 5.31.28 11.85c0 2.09.55 4.13 1.6 5.92L.18 24l6.38-1.67a11.9 11.9 0 0 0 5.57 1.42h.01c6.53 0 11.85-5.32 11.85-11.85a11.8 11.8 0 0 0-3.47-8.42ZM12.14 21.7a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.79.99 1.01-3.69-.24-.38a9.83 9.83 0 0 1-1.51-5.18c0-5.48 4.46-9.94 9.94-9.94a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.05c0 5.48-4.46 9.94-9.94 9.94Zm5.45-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.5 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
                         </svg>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit our LinkedIn page">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visit our Instagram page">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
+                        Consultanos por WhatsApp
                     </a>
                 </div>
             </section>
         </main>
 
-        <!-- Footer -->
         <footer class="footer">
-            <p class="footer-text footer-design">
-                Design by <a href="https://webspace.ng" target="_blank" rel="noopener noreferrer" class="footer-link">Webspace</a>
+            <p class="footer-text">
+                © <span id="current-year">2026</span>
+                <strong>STAMPING ZONE</strong> · Paysandú, Uruguay.
+                <br>DTF · Vinilo textil · Sublimación
             </p>
         </footer>
     </div>
 
-    <!-- JavaScript -->
-    <script src="./js/main.js"></script>
+    <script>
+        // La página es independiente: no envía formularios ni guarda datos.
+        // El preloader se oculta incluso si la plantilla original no carga.
+        document.documentElement.style.colorScheme = 'dark';
+
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.opacity = '0';
+                preloader.style.pointerEvents = 'none';
+                window.setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 250);
+            }
+        });
+
+        const year = document.getElementById('current-year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
-
+```
