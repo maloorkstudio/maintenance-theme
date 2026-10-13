@@ -1,397 +1,532 @@
+```html
 <!DOCTYPE html>
 <html lang="es-UY">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0b0b0b">
-    <meta name="color-scheme" content="dark">
-    
-    <title>Stamping Zone | Volvemos pronto</title>
-    <meta name="description" content="Estamos mejorando Stamping Zone. Muy pronto volvemos con nuevos drops, prendas y estampados personalizados en Paysandú, Uruguay.">
-    <meta name="keywords" content="Stamping Zone, ropa urbana, streetwear, DTF, vinilo textil, sublimación, Paysandú, Uruguay">
-    <meta name="author" content="Stamping Zone">
-    <meta name="robots" content="noindex, nofollow">
-    
-    <meta property="og:title" content="Stamping Zone | Volvemos pronto">
-    <meta property="og:description" content="Estamos preparando algo grande. Volvemos pronto con nuevos drops y estampados personalizados.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stampingzone.store">
-    
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Stamping Zone | Volvemos pronto">
-    <meta name="twitter:description" content="Estamos preparando algo grande. Volvemos pronto.">
-    
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-    <link rel="stylesheet" href="./css/style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --sz-bg: #0b0b0b;
-            --sz-surface: #141414;
-            --sz-gold: #f0ad32;
-            --sz-gold-light: #ffc451;
-            --sz-text: #f5f5f5;
-            --sz-muted: #aaa;
-        }
+  <title>Stamping Zone | Volvemos pronto</title>
+  <meta name="description" content="Estamos mejorando la tienda online de Stamping Zone. Muy pronto estaremos de vuelta con más diseños, ropa y estampados personalizados.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#08080b">
 
-        * { box-sizing: border-box; }
+  <meta property="og:title" content="Stamping Zone | Volvemos pronto">
+  <meta property="og:description" content="Estamos preparando algo nuevo. Volvemos pronto.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stampingzone.store">
 
-        html { min-height: 100%; background: var(--sz-bg); }
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background:
-                radial-gradient(ellipse at 50% 35%, rgba(240,173,50,.09), transparent 52%),
-                var(--sz-bg);
-            color: var(--sz-text);
-            font-family: 'Inter', Arial, sans-serif;
-        }
+  <style>
+    :root {
+      --background: #08080b;
+      --surface: #121218;
+      --pink: #ff4fa3;
+      --blue: #54c8ff;
+      --white: #f7f7fb;
+      --muted: #a4a4b2;
+      --border: rgba(255, 255, 255, 0.1);
+    }
 
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .header {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            min-height: 48px;
-        }
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
 
-        /* Ocultamos el selector de tema: el diseño es siempre oscuro. */
-        .theme-toggle { display: none !important; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 12% 18%, rgba(255, 79, 163, 0.12), transparent 38%),
+        radial-gradient(ellipse at 88% 82%, rgba(84, 200, 255, 0.1), transparent 38%),
+        var(--background);
+      font-family: "Inter", Arial, sans-serif;
+    }
 
-        .main {
-            flex: 1;
-            display: grid;
-            place-items: center;
-            padding: 32px 0 48px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .hero {
-            width: 100%;
-            max-width: 780px;
-            margin: auto;
-            text-align: center;
-        }
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px 24px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .brand {
-            margin: 0 0 24px;
-            color: var(--sz-text);
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 900;
-            letter-spacing: -.07em;
-            line-height: 1;
-            text-transform: uppercase;
-        }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+    }
 
-        .brand span { color: var(--sz-gold); }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.085em;
+      line-height: 1;
+      text-transform: uppercase;
+      user-select: none;
+    }
 
-        .brand-line {
-            width: 64px;
-            height: 4px;
-            margin: 0 auto 28px;
-            background: var(--sz-gold);
-            border-radius: 10px;
-        }
+    .brand-stamping {
+      color: var(--pink);
+      text-shadow: 0 0 32px rgba(255, 79, 163, 0.16);
+    }
 
-        .illustration-wrapper {
-            width: min(240px, 65vw);
-            margin: 0 auto 18px;
-            color: var(--sz-gold);
-        }
+    .brand-zone {
+      margin-left: 0.2em;
+      color: var(--blue);
+      text-shadow: 0 0 32px rgba(84, 200, 255, 0.16);
+    }
 
-        .maintenance-illustration {
-            display: block;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 24px rgba(240,173,50,.12));
-        }
+    main {
+      width: 100%;
+      max-width: 850px;
+      margin: auto;
+      padding: 55px 0 65px;
+      text-align: center;
+    }
 
-        .headline {
-            margin: 0 auto 18px;
-            max-width: 760px;
-            color: var(--sz-text);
-            font-size: clamp(2rem, 6vw, 4.2rem);
-            font-weight: 900;
-            letter-spacing: -.055em;
-            line-height: 1.05;
-            text-transform: uppercase;
-        }
+    .top-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      color: #d5d5df;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-        .headline span { color: var(--sz-gold); }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 12px rgba(255, 79, 163, 0.7);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
 
-        .subtext {
-            max-width: 560px;
-            margin: 0 auto;
-            color: var(--sz-muted);
-            font-size: clamp(1rem, 2.5vw, 1.12rem);
-            line-height: 1.8;
-        }
+    .illustration {
+      position: relative;
+      width: min(100%, 330px);
+      margin: 36px auto 30px;
+    }
 
-        .status-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            margin: 26px auto 0;
-            padding: 10px 15px;
-            border: 1px solid rgba(240,173,50,.28);
-            border-radius: 999px;
-            background: rgba(240,173,50,.06);
-            color: var(--sz-gold-light);
-            font-size: .78rem;
-            font-weight: 700;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-        }
+    .illustration-glow {
+      position: absolute;
+      inset: 20%;
+      z-index: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255, 79, 163, 0.23), rgba(84, 200, 255, 0.22));
+      filter: blur(55px);
+    }
 
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--sz-gold);
-            box-shadow: 0 0 12px rgba(240,173,50,.8);
-        }
+    .illustration svg {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-        .contact-text {
-            margin: 30px 0 18px;
-            color: #ddd;
-            font-size: .95rem;
-        }
+    .eyebrow {
+      margin-bottom: 17px;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
 
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 0 auto;
-        }
+    h1 {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: clamp(2.6rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.99;
+      letter-spacing: -0.075em;
+      text-transform: uppercase;
+    }
 
-        .contact-btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            min-height: 48px;
-            padding: 13px 20px;
-            border: 1px solid var(--sz-gold);
-            border-radius: 6px;
-            background: var(--sz-gold);
-            color: #111;
-            font-size: .9rem;
-            font-weight: 800;
-            text-decoration: none;
-            transition: transform .2s ease, background .2s ease;
-        }
+    h1 .pink {
+      color: var(--pink);
+    }
 
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            background: var(--sz-gold-light);
-        }
+    h1 .blue {
+      color: var(--blue);
+    }
 
-        .contact-btn.secondary {
-            background: transparent;
-            color: var(--sz-gold);
-        }
+    .description {
+      max-width: 560px;
+      margin: 24px auto 0;
+      color: var(--muted);
+      font-size: clamp(0.96rem, 2vw, 1.08rem);
+      line-height: 1.85;
+    }
 
-        .contact-btn.secondary:hover {
-            background: rgba(240,173,50,.1);
-        }
+    .status-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      margin-top: 29px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.035);
+      color: #dedee8;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
 
-        .contact-btn svg {
-            width: 19px;
-            height: 19px;
-            flex-shrink: 0;
-        }
+    .status-icon {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(84, 200, 255, 0.12);
+      color: var(--blue);
+    }
 
-        .social-container { display: none !important; }
+    .contact-heading {
+      margin-top: 39px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
 
-        .footer {
-            padding: 22px 0 8px;
-            border-top: 1px solid rgba(255,255,255,.08);
-            text-align: center;
-        }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
 
-        .footer-text {
-            margin: 0;
-            color: #777;
-            font-size: .8rem;
-            line-height: 1.7;
-        }
+    .contact-button {
+      display: inline-flex;
+      min-height: 49px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
 
-        .footer-text strong {
-            color: #ccc;
-            font-weight: 700;
-        }
+    .contact-button:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.25);
+      background: #1a1a23;
+    }
 
-        .footer-link {
-            color: var(--sz-gold);
-            text-decoration: none;
-        }
+    .contact-button.instagram svg {
+      color: var(--pink);
+    }
 
-        .footer-link:hover { text-decoration: underline; }
+    .contact-button.whatsapp svg {
+      color: var(--blue);
+    }
 
-        .fade-in-up {
-            animation: sz-enter .7s ease both;
-        }
+    .contact-button svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
 
-        @keyframes sz-enter {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .contact-note {
+      margin-top: 17px;
+      color: #777785;
+      font-size: 0.76rem;
+      line-height: 1.7;
+    }
 
-        @media (max-width: 480px) {
-            .container { padding: 18px; }
-            .main { padding: 20px 0 34px; }
-            .headline { font-size: clamp(2rem, 10vw, 3rem); }
-            .contact-buttons { flex-direction: column; }
-            .contact-btn { width: 100%; }
-        }
+    footer {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: #777785;
+      font-size: 0.75rem;
+    }
 
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
+    .footer-brand {
+      color: #aaaab7;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+
+    .footer-brand .pink {
+      color: var(--pink);
+    }
+
+    .footer-brand .blue {
+      color: var(--blue);
+    }
+
+    .footer-message {
+      text-align: right;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.45;
+        transform: scale(0.8);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 24px 19px 18px;
+      }
+
+      main {
+        padding: 48px 0 50px;
+      }
+
+      .illustration {
+        width: min(78%, 275px);
+        margin-top: 32px;
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 12vw, 4rem);
+      }
+
+      .description {
+        line-height: 1.75;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .contact-button {
+        width: 100%;
+      }
+
+      footer {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-message {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+  <div class="page">
 
-    <div id="preloader" class="preloader" aria-hidden="true">
-        <div class="preloader-spinner"><div class="spinner"></div></div>
-    </div>
+    <header>
+      <a class="brand" href="https://stampingzone.store" aria-label="Stamping Zone">
+        <span class="brand-stamping">STAMPING</span>
+        <span class="brand-zone">ZONE</span>
+      </a>
+    </header>
 
-    <div class="container">
-        <header class="header" aria-label="Stamping Zone"></header>
+    <main>
+      <div class="top-label">
+        <span class="status-dot"></span>
+        Estamos trabajando
+      </div>
 
-        <main id="main-content" class="main">
-            <section class="hero" aria-labelledby="main-title">
-                <div class="brand fade-in-up" aria-label="Stamping Zone">
-                    STAMPING <span>ZONE</span>
-                </div>
+      <div class="illustration" aria-hidden="true">
+        <div class="illustration-glow"></div>
 
-                <div class="brand-line"></div>
+        <svg viewBox="0 0 360 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="shirtGradient" x1="70" y1="45" x2="285" y2="235" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#FF4FA3"/>
+              <stop offset="1" stop-color="#A83DFF"/>
+            </linearGradient>
+            <linearGradient id="blueGradient" x1="150" y1="50" x2="280" y2="220" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#8BE1FF"/>
+              <stop offset="1" stop-color="#54C8FF"/>
+            </linearGradient>
+          </defs>
 
-                <div class="illustration-wrapper fade-in-up">
-                    <svg class="maintenance-illustration"
-                         xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 240 180"
-                         role="img"
-                         aria-label="Ilustración de herramientas y mantenimiento">
-                        <circle cx="120" cy="90" r="73" fill="none"
-                                stroke="currentColor" stroke-width="1.5" opacity=".18"/>
-                        <circle cx="120" cy="90" r="55" fill="none"
-                                stroke="currentColor" stroke-width="1" opacity=".25"
-                                stroke-dasharray="4 8"/>
-                        <g transform="translate(120 90)" fill="none"
-                           stroke="currentColor" stroke-linecap="round"
-                           stroke-linejoin="round">
-                            <path d="M-34 -35 A23 23 0 0 0 -6 -7 L32 31 A9 9 0 0 1 19 44 L-19 6 A23 23 0 0 0 -47 -22 L-31 -6 L-39 2 L-55 -14 A23 23 0 0 0 -27 14"
-                                  stroke-width="5"/>
-                            <path d="M22 -45 L35 -32 L15 -12 L2 -25 Z"
-                                  stroke-width="4"/>
-                            <path d="M-5 -27 L-25 -47 L-42 -43 L-28 -29 L-30 -13"
-                                  stroke-width="4"/>
-                            <circle cx="0" cy="0" r="10" stroke-width="3"/>
-                            <path d="M-68 50 H68" stroke-width="2" opacity=".5"/>
-                        </g>
-                        <circle cx="190" cy="36" r="4" fill="currentColor"/>
-                        <circle cx="47" cy="42" r="3" fill="currentColor" opacity=".6"/>
-                        <path d="M38 116 l6 6 -6 6 -6 -6z" fill="currentColor" opacity=".7"/>
-                        <path d="M192 124 l5 5 -5 5 -5 -5z" fill="currentColor" opacity=".7"/>
-                    </svg>
-                </div>
+          <circle cx="180" cy="132" r="105" stroke="#FFFFFF" stroke-opacity=".07" stroke-width="1.5"/>
+          <circle cx="180" cy="132" r="82" stroke="#FFFFFF" stroke-opacity=".06" stroke-width="1.5" stroke-dasharray="5 8"/>
 
-                <h1 id="main-title" class="headline fade-in-up">
-                    ESTAMOS PREPARANDO <span>ALGO GRANDE.</span>
-                </h1>
+          <path d="M112 65L143 49C153 65 166 73 180 73C194 73 207 65 217 49L248 65L287 105L256 133L238 116V218H122V116L104 133L73 105L112 65Z"
+                fill="url(#shirtGradient)" fill-opacity=".96" stroke="#FFB0D6" stroke-opacity=".8" stroke-width="2" stroke-linejoin="round"/>
 
-                <p class="subtext fade-in-up">
-                    Estamos mejorando nuestra web para ofrecerte una mejor experiencia.
-                    Muy pronto volvemos con nuevos drops, prendas y estampados personalizados.
-                </p>
+          <path d="M143 49C150 66 163 74 180 74C197 74 210 66 217 49"
+                stroke="#FFE4F2" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
 
-                <div class="status-label fade-in-up">
-                    <span class="status-dot" aria-hidden="true"></span>
-                    Estamos trabajando para volver pronto
-                </div>
+          <path d="M128 121V204M232 121V204" stroke="#FFFFFF" stroke-opacity=".15" stroke-width="2" stroke-linecap="round"/>
 
-                <p class="contact-text fade-in-up">
-                    Mientras tanto, conectá con Stamping Zone.
-                </p>
+          <rect x="139" y="121" width="82" height="53" rx="7" fill="#0D0D14" fill-opacity=".8" stroke="url(#blueGradient)" stroke-width="1.5"/>
 
-                <div class="contact-buttons fade-in-up">
-                    <a class="contact-btn"
-                       href="https://www.instagram.com/stamping_zone_/"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                             fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                        </svg>
-                        Seguinos en Instagram
-                    </a>
+          <path d="M151 140H209" stroke="#54C8FF" stroke-width="3" stroke-linecap="round"/>
+          <path d="M151 150H197" stroke="#FF4FA3" stroke-width="3" stroke-linecap="round"/>
+          <path d="M151 160H185" stroke="#54C8FF" stroke-width="3" stroke-linecap="round"/>
 
-                    <a class="contact-btn secondary"
-                       href="https://wa.me/59892719254?text=Hola%20Stamping%20Zone%2C%20quer%C3%ADa%20hacer%20una%20consulta."
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                             fill="currentColor">
-                            <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.6 0 .28 5.31.28 11.85c0 2.09.55 4.13 1.6 5.92L.18 24l6.38-1.67a11.9 11.9 0 0 0 5.57 1.42h.01c6.53 0 11.85-5.32 11.85-11.85a11.8 11.8 0 0 0-3.47-8.42ZM12.14 21.7a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.79.99 1.01-3.69-.24-.38a9.83 9.83 0 0 1-1.51-5.18c0-5.48 4.46-9.94 9.94-9.94a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.05c0 5.48-4.46 9.94-9.94 9.94Zm5.45-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.5 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
-                        </svg>
-                        Consultanos por WhatsApp
-                    </a>
-                </div>
-            </section>
-        </main>
+          <path d="M57 70L62 83L75 88L62 93L57 106L52 93L39 88L52 83L57 70Z" fill="#54C8FF"/>
+          <path d="M292 155L296 166L307 170L296 174L292 185L288 174L277 170L288 166L292 155Z" fill="#FF4FA3"/>
+          <circle cx="84" cy="185" r="4" fill="#54C8FF"/>
+          <circle cx="272" cy="64" r="5" fill="#FF4FA3"/>
+          <circle cx="104" cy="44" r="3" fill="#FFFFFF" fill-opacity=".8"/>
+          <circle cx="264" cy="208" r="3" fill="#FFFFFF" fill-opacity=".8"/>
 
-        <footer class="footer">
-            <p class="footer-text">
-                © <span id="current-year">2026</span>
-                <strong>STAMPING ZONE</strong> · Paysandú, Uruguay.
-                <br>DTF · Vinilo textil · Sublimación
-            </p>
-        </footer>
-    </div>
+          <path d="M124 237H236" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2" stroke-linecap="round"/>
+          <path d="M148 247H212" stroke="#FFFFFF" stroke-opacity=".1" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
 
-    <script>
-        // La página es independiente: no envía formularios ni guarda datos.
-        // El preloader se oculta incluso si la plantilla original no carga.
-        document.documentElement.style.colorScheme = 'dark';
+      <p class="eyebrow">Streetwear · Diseño · Personalización</p>
 
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.style.opacity = '0';
-                preloader.style.pointerEvents = 'none';
-                window.setTimeout(function () {
-                    preloader.style.display = 'none';
-                }, 250);
-            }
-        });
+      <h1>
+        ESTAMOS<br>
+        PREPARANDO<br>
+        <span class="pink">ALGO</span>
+        <span class="blue">GRANDE.</span>
+      </h1>
 
-        const year = document.getElementById('current-year');
-        if (year) year.textContent = new Date().getFullYear();
-    </script>
+      <p class="description">
+        Estamos mejorando nuestra tienda online para ofrecerte una mejor experiencia.
+        Muy pronto vas a poder volver a descubrir nuestros productos y diseños.
+        <strong>¡Gracias por bancarnos!</strong>
+      </p>
+
+      <div class="status-card">
+        <span class="status-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 7V12L15.5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </span>
+        Estamos trabajando para volver pronto
+      </div>
+
+      <p class="contact-heading">
+        Mientras tanto, seguinos en redes o escribinos.
+      </p>
+
+      <div class="contact-buttons">
+        <a
+          class="contact-button instagram"
+          href="https://www.instagram.com/stamping_zone_/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Seguir a Stamping Zone en Instagram"
+        >
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor"/>
+          </svg>
+          Seguinos en Instagram
+        </a>
+
+        <a
+          class="contact-button whatsapp"
+          href="https://wa.me/59892719254"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar a Stamping Zone por WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 11.7A8 8 0 0 1 8.1 18.8L4 20L5.2 16A8 8 0 1 1 20 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 8.5C9.3 8 9.6 8 9.9 8C10.1 8 10.3 8 10.5 8.5L11.3 10.2C11.4 10.5 11.3 10.7 11.1 10.9L10.5 11.6C10.3 11.8 10.4 12 10.5 12.2C11.1 13.3 12 14.1 13.1 14.7C13.3 14.8 13.5 14.8 13.7 14.6L14.5 13.7C14.7 13.5 14.9 13.5 15.2 13.6L16.8 14.4C17.1 14.6 17.1 14.8 17 15.1C16.8 16 16 16.5 15.1 16.5C13.8 16.5 11.8 15.5 10.3 14.1C8.9 12.7 8 10.9 8 9.8C8 9.3 8.4 8.8 9 8.5Z" fill="currentColor"/>
+          </svg>
+          Escribinos por WhatsApp
+        </a>
+      </div>
+
+      <p class="contact-note">
+        DTF · Vinilo · Sublimación<br>
+        Paysandú, Uruguay
+      </p>
+    </main>
+
+    <footer>
+      <p class="footer-brand">
+        <span class="pink">STAMPING</span>
+        <span class="blue">ZONE</span>
+      </p>
+
+      <p class="footer-message">
+        © <span id="year">2026</span> Stamping Zone. Todos los derechos reservados.
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    (() => {
+      const yearElement = document.getElementById("year");
+
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
 </body>
 </html>
 ```
