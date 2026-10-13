@@ -1,676 +1,172 @@
 ```html
 <!DOCTYPE html>
-<html lang="es-UY">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080B14">
-
+  <meta name="theme-color" content="#080b12">
   <title>Stamping Zone | Volvemos pronto</title>
-  <meta name="description" content="Stamping Zone, streetwear y estampados personalizados en Paysandú, Uruguay. Estamos preparando algo nuevo. Volvemos pronto.">
-  <meta name="robots" content="noindex, nofollow">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <style>
-    /* ==============================
-       STAMPING ZONE — DESDE CERO
-       Negro azulado + rosa + celeste
-    ============================== */
-
-    :root {
-      color-scheme: dark;
-
-      --background: #080B14;
-      --surface: #0E1422;
-      --surface-light: #131D30;
-      --pink: #FF4FA3;
-      --blue: #54C8FF;
-      --white: #F5F7FF;
-      --muted: #9BA8BF;
-      --border: rgba(160, 190, 235, 0.14);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      min-height: 100%;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
+      margin: 0;
       min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
       overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      color: var(--white);
-      background: var(--background);
-      font-family: "Inter", Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
       background:
-        radial-gradient(
-          ellipse at 8% 15%,
-          rgba(255, 79, 163, 0.11),
-          transparent 34%
-        ),
-        radial-gradient(
-          ellipse at 92% 75%,
-          rgba(84, 200, 255, 0.10),
-          transparent 36%
-        ),
-        linear-gradient(
-          145deg,
-          #080B14 0%,
-          #0A1020 48%,
-          #080B14 100%
-        );
+        radial-gradient(ellipse at 15% 15%, #ff4f9a20, transparent 42%),
+        radial-gradient(ellipse at 85% 85%, #50d9ff1c, transparent 42%),
+        #080b12;
+      color: #f6f7fb;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .page {
+    .container {
       width: 100%;
-      max-width: 1180px;
-      min-height: 100vh;
-      margin: 0 auto;
-      padding: 28px 30px 20px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* HEADER */
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 0;
+      max-width: 760px;
+      text-align: center;
+      padding: 52px 28px;
+      border: 1px solid #ffffff16;
+      border-radius: 28px;
+      background: #10141dcc;
+      box-shadow: 0 25px 100px #0008;
     }
 
     .logo {
-      display: inline-flex;
-      align-items: center;
-      font-size: clamp(2rem, 5.2vw, 3.2rem);
+      font-size: clamp(30px, 7vw, 52px);
       font-weight: 900;
-      letter-spacing: -0.085em;
-      line-height: 1;
-      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin-bottom: 36px;
     }
 
-    .logo-stamping {
-      color: var(--pink);
-      text-shadow: 0 0 30px rgba(255, 79, 163, 0.14);
-    }
-
-    .logo-zone {
-      margin-left: 0.19em;
-      color: var(--blue);
-      text-shadow: 0 0 30px rgba(84, 200, 255, 0.13);
-    }
-
-    .logo-dot {
-      color: var(--white);
-    }
-
-    /* CONTENIDO PRINCIPAL */
-
-    main {
-      flex: 1;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 50px 0 75px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+    .pink { color: #ff4f9a; }
+    .blue { color: #50d9ff; }
 
     .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 15px;
-      border: 1px solid rgba(255, 79, 163, 0.22);
-      border-radius: 999px;
-      background: rgba(255, 79, 163, 0.055);
-      color: #F7C5DE;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--pink);
-      box-shadow: 0 0 13px rgba(255, 79, 163, 0.8);
-      animation: pulse 2s infinite;
-    }
-
-    /* ILUSTRACIÓN ORIGINAL EN SVG */
-
-    .artwork {
-      position: relative;
-      width: min(100%, 300px);
-      margin: 30px auto 26px;
-    }
-
-    .artwork::before {
-      content: "";
-      position: absolute;
-      inset: 20%;
-      border-radius: 50%;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 79, 163, 0.2),
-        rgba(84, 200, 255, 0.2)
-      );
-      filter: blur(48px);
-    }
-
-    .artwork svg {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: auto;
-      overflow: visible;
-    }
-
-    /* TITULAR */
-
-    .eyebrow {
-      margin-bottom: 17px;
-      color: var(--blue);
-      font-size: 0.75rem;
+      display: inline-block;
+      padding: 9px 14px;
+      border: 1px solid #50d9ff55;
+      border-radius: 50px;
+      color: #50d9ff;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(2.8rem, 7.5vw, 6rem);
+      margin: 0 auto 18px;
+      font-size: clamp(38px, 8vw, 68px);
+      line-height: .98;
+      letter-spacing: -3px;
       font-weight: 900;
-      line-height: 0.96;
-      letter-spacing: -0.085em;
-      text-transform: uppercase;
     }
 
-    h1 .line {
-      display: block;
+    p {
+      max-width: 480px;
+      margin: 0 auto;
+      color: #aab2c3;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
-    .pink {
-      color: var(--pink);
-    }
-
-    .blue {
-      color: var(--blue);
-    }
-
-    .description {
-      max-width: 560px;
-      margin-top: 25px;
-      color: var(--muted);
-      font-size: clamp(0.94rem, 1.8vw, 1.06rem);
-      font-weight: 400;
-      line-height: 1.85;
-    }
-
-    .description strong {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    /* TARJETA DE ESTADO */
-
-    .status-card {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 28px;
-      padding: 13px 17px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: rgba(14, 20, 34, 0.8);
-      color: #DCE6F8;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-
-    .status-icon {
-      display: grid;
-      width: 30px;
-      height: 30px;
-      flex-shrink: 0;
-      place-items: center;
-      border-radius: 9px;
-      background: rgba(84, 200, 255, 0.1);
-      color: var(--blue);
-    }
-
-    .status-icon svg {
-      width: 17px;
-      height: 17px;
-    }
-
-    /* CONTACTO */
-
-    .contact-title {
-      margin-top: 38px;
-      color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.7;
+    .line {
+      width: 75px;
+      height: 4px;
+      border-radius: 10px;
+      margin: 28px auto;
+      background: linear-gradient(90deg, #ff4f9a, #50d9ff);
     }
 
     .buttons {
       display: flex;
       justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 17px;
+      gap: 12px;
+      margin-top: 30px;
     }
 
     .button {
-      min-height: 52px;
-      padding: 0 22px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      border: 1px solid var(--border);
+      display: inline-block;
+      padding: 15px 21px;
       border-radius: 12px;
-      background: rgba(14, 20, 34, 0.9);
-      color: var(--white);
-      font-family: inherit;
-      font-size: 0.86rem;
-      font-weight: 700;
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease,
-        box-shadow 180ms ease;
-    }
-
-    .button svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-
-    .button-instagram svg {
-      color: var(--pink);
-    }
-
-    .button-whatsapp svg {
-      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s, opacity .2s;
     }
 
     .button:hover {
       transform: translateY(-3px);
-      background: var(--surface-light);
+      opacity: .9;
     }
 
-    .button-instagram:hover {
-      border-color: rgba(255, 79, 163, 0.55);
-      box-shadow: 0 9px 28px rgba(255, 79, 163, 0.08);
+    .instagram {
+      color: white;
+      background: linear-gradient(110deg, #ff4f9a, #a855f7);
     }
 
-    .button-whatsapp:hover {
-      border-color: rgba(84, 200, 255, 0.55);
-      box-shadow: 0 9px 28px rgba(84, 200, 255, 0.08);
+    .whatsapp {
+      color: #080b12;
+      background: #50d9ff;
     }
 
-    .services {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 11px;
-      margin-top: 32px;
-      color: #74829B;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+    .footer {
+      margin-top: 38px;
+      color: #737d90;
+      font-size: 11px;
+      letter-spacing: 2px;
     }
 
-    .services span {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-    }
-
-    .services span + span::before {
-      content: "";
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--blue);
-      opacity: 0.8;
-    }
-
-    /* PIE */
-
-    footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      padding-top: 19px;
-      border-top: 1px solid var(--border);
-      color: #758198;
-      font-size: 0.72rem;
-    }
-
-    .footer-brand {
-      color: #BBC7DA;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-    }
-
-    .footer-brand .pink,
-    .footer-brand .blue {
-      color: inherit;
-    }
-
-    .footer-brand .pink {
-      color: var(--pink);
-    }
-
-    .footer-brand .blue {
-      color: var(--blue);
-    }
-
-    .footer-right {
-      text-align: right;
-    }
-
-    /* ANIMACIONES */
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.5;
-        transform: scale(0.82);
-      }
-    }
-
-    /* CELULARES */
-
-    @media (max-width: 600px) {
-      .page {
-        padding: 22px 19px 17px;
-      }
-
-      .header {
-        padding: 13px 0;
-      }
-
-      main {
-        padding: 42px 0 48px;
-      }
-
-      .logo {
-        font-size: clamp(2rem, 9vw, 2.8rem);
-      }
-
-      .artwork {
-        width: min(78%, 245px);
-        margin-top: 27px;
-        margin-bottom: 26px;
-      }
-
-      .eyebrow {
-        font-size: 0.64rem;
-        letter-spacing: 0.16em;
-      }
-
-      h1 {
-        font-size: clamp(2.5rem, 12vw, 4rem);
-        letter-spacing: -0.075em;
-      }
-
-      .description {
-        max-width: 390px;
-        margin-top: 22px;
-        font-size: 0.94rem;
-      }
-
-      .status-card {
-        max-width: 100%;
-        font-size: 0.75rem;
-      }
-
-      .buttons {
-        width: 100%;
-        max-width: 340px;
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .services {
-        gap: 8px;
-        font-size: 0.63rem;
-        letter-spacing: 0.08em;
-      }
-
-      .services span {
-        gap: 8px;
-      }
-
-      footer {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        line-height: 1.8;
-      }
-
-      .footer-right {
-        text-align: center;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+    @media (max-width: 480px) {
+      .container { padding: 40px 20px; }
+      h1 { letter-spacing: -2px; }
+      .button { width: 100%; }
     }
   </style>
 </head>
-
 <body>
-  <div class="page">
+  <main class="container">
+    <div class="logo">
+      <span class="pink">STAMPING</span>
+      <span class="blue">ZONE</span>
+    </div>
 
-    <header class="header">
-      <a
-        class="logo"
-        href="https://stampingzone.store"
-        aria-label="Stamping Zone"
-      >
-        <span class="logo-stamping">STAMPING</span>
-        <span class="logo-zone">ZONE<span class="logo-dot">.</span></span>
+    <div class="status">● ESTAMOS RENOVÁNDONOS</div>
+
+    <h1>ALGO NUEVO<br>
+      <span class="pink">SE VIENE.</span>
+    </h1>
+
+    <p>
+      Estamos trabajando para traerte una nueva experiencia.
+      Nuestro sitio está temporalmente en mantenimiento,
+      pero seguimos disponibles para vos.
+    </p>
+
+    <div class="line"></div>
+
+    <p>Mientras tanto, contactanos o seguinos en nuestras redes.</p>
+
+    <div class="buttons">
+      <a class="button instagram"
+         href="https://www.instagram.com/stamping_zone_/"
+         target="_blank" rel="noopener noreferrer">
+        INSTAGRAM ↗
       </a>
-    </header>
 
-    <main>
-      <div class="status">
-        <span class="status-dot"></span>
-        Estamos preparando algo nuevo
-      </div>
+      <a class="button whatsapp"
+         href="https://wa.me/59892719254"
+         target="_blank" rel="noopener noreferrer">
+        WHATSAPP ↗
+      </a>
+    </div>
 
-      <div class="artwork" aria-hidden="true">
-        <svg viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="shirt" x1="70" y1="50" x2="250" y2="230" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF4FA3"/>
-              <stop offset="1" stop-color="#54C8FF"/>
-            </linearGradient>
-
-            <linearGradient id="stroke" x1="105" y1="70" x2="220" y2="190" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF4FA3"/>
-              <stop offset="1" stop-color="#54C8FF"/>
-            </linearGradient>
-          </defs>
-
-          <circle cx="160" cy="127" r="105" stroke="#9CB8E8" stroke-opacity=".1" stroke-width="1.5"/>
-          <circle cx="160" cy="127" r="83" stroke="#9CB8E8" stroke-opacity=".12" stroke-dasharray="4 9"/>
-
-          <path d="M112 54L137 41C143 55 151 62 160 62C169 62 177 55 183 41L208 54L244 76L225 113L207 104V207H113V104L95 113L76 76L112 54Z"
-                fill="url(#shirt)" fill-opacity=".12" stroke="url(#shirt)" stroke-width="2.2" stroke-linejoin="round"/>
-
-          <path d="M137 42C142 57 151 64 160 64C169 64 178 57 183 42"
-                stroke="url(#shirt)" stroke-width="2.4" stroke-linecap="round"/>
-
-          <path d="M124 114V194M196 114V194" stroke="#A7C7F7" stroke-opacity=".15" stroke-width="1.5"/>
-
-          <rect x="129" y="116" width="62" height="48" rx="6" fill="#080B14" stroke="url(#stroke)" stroke-width="1.5"/>
-
-          <text x="160" y="136" text-anchor="middle" fill="#FF4FA3" font-size="8.5" font-weight="900" letter-spacing=".4">STAMPING</text>
-          <text x="160" y="148" text-anchor="middle" fill="#54C8FF" font-size="9" font-weight="900" letter-spacing="1">ZONE</text>
-
-          <path d="M138 155H182" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="1.2"/>
-
-          <g transform="translate(228 31)">
-            <circle cx="22" cy="22" r="21" fill="#101827" stroke="#54C8FF" stroke-opacity=".65"/>
-            <path d="M22 11V22L30 27" stroke="#54C8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="22" cy="22" r="2.5" fill="#FF4FA3"/>
-          </g>
-
-          <g transform="translate(35 149)">
-            <circle cx="23" cy="23" r="21" fill="#101827" stroke="#FF4FA3" stroke-opacity=".65"/>
-            <path d="M23 12V34M12 23H34" stroke="#FF4FA3" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="23" cy="23" r="5" fill="#101827" stroke="#54C8FF" stroke-width="1.5"/>
-          </g>
-
-          <path d="M76 38L79 47L88 50L79 53L76 62L73 53L64 50L73 47L76 38Z" fill="#54C8FF"/>
-          <path d="M260 158L263 166L271 169L263 172L260 180L257 172L249 169L257 166L260 158Z" fill="#FF4FA3"/>
-
-          <circle cx="96" cy="216" r="3" fill="#54C8FF"/>
-          <circle cx="228" cy="219" r="3" fill="#FF4FA3"/>
-          <circle cx="262" cy="92" r="2.5" fill="#54C8FF"/>
-        </svg>
-      </div>
-
-      <p class="eyebrow">Streetwear · Diseño · Personalización</p>
-
-      <h1>
-        <span class="line">ESTAMOS</span>
-        <span class="line pink">PREPARANDO</span>
-        <span class="line">ALGO <span class="blue">GRANDE.</span></span>
-      </h1>
-
-      <p class="description">
-        Estamos mejorando nuestra tienda online para ofrecerte una experiencia
-        <strong>a otro nivel.</strong> Muy pronto volvemos con más diseños,
-        ropa y estampados personalizados.
-      </p>
-
-      <div class="status-card">
-        <span class="status-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M12 7V12L15.5 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        Estamos trabajando para volver pronto
-      </div>
-
-      <p class="contact-title">
-        Mientras tanto, seguimos en contacto.
-      </p>
-
-      <div class="buttons">
-        <a
-          class="button button-instagram"
-          href="https://www.instagram.com/stamping_zone_/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/>
-            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
-            <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor"/>
-          </svg>
-          Seguinos en Instagram
-        </a>
-
-        <a
-          class="button button-whatsapp"
-          href="https://wa.me/59892719254"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M20 11.6A8.1 8.1 0 0 1 8 18.6L4 20L5.3 16A8.1 8.1 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-            <path d="M9 8.2C9.3 7.9 9.6 7.9 9.9 8.1L11 10.3C11.1 10.5 10.9 10.8 10.6 11L10 11.7C10.7 13.1 11.7 14 13.1 14.7L13.8 13.9C14 13.7 14.3 13.6 14.6 13.8L16.6 14.8C16.9 15 16.9 15.2 16.8 15.5C16.5 16.4 15.7 16.8 14.8 16.8C13.3 16.8 11.3 15.7 10 14.4C8.7 13.1 7.8 11.3 7.8 10.1C7.8 9.3 8.2 8.6 9 8.2Z" fill="currentColor"/>
-          </svg>
-          Escribinos por WhatsApp
-        </a>
-      </div>
-
-      <div class="services" aria-label="Servicios">
-        <span>DTF</span>
-        <span>Vinilo</span>
-        <span>Sublimación</span>
-        <span>Paysandú, Uruguay</span>
-      </div>
-    </main>
-
-    <footer>
-      <p class="footer-brand">
-        <span class="pink">STAMPING</span>
-        <span class="blue">ZONE</span>
-      </p>
-
-      <p class="footer-right">
-        © <span id="year">2026</span> Stamping Zone · Todos los derechos reservados
-      </p>
-    </footer>
-
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <div class="footer">STAMPING ZONE · PAYSANDÚ, URUGUAY</div>
+  </main>
 </body>
 </html>
 ```
